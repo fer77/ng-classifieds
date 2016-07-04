@@ -28,23 +28,27 @@
         <form>
           <md-input-container>
             <label for="title">Title</label>
-            <input type="text" id="title" md-auto-focus>
+<!-- ng-model is the means that input elements communicate with the data model. -->
+            <input type="text" id="title" ng-model="classified.title" md-auto-focus>
           </md-input-container>
           <md-input-container>
             <label for="price">Price</label>
-            <input type="text" id="price" md-auto-focus>
+            <input type="text" id="price" ng-model="classified.price" md-auto-focus>
           </md-input-container>
           <md-input-container>
             <label for="description">Description</label>
-            <input type="text" id="description" md-auto-focus>
+            <textarea type="text" id="description" ng-model="classified.description" md-auto-focus></textarea>
           </md-input-container>
           <md-input-container>
             <label for="image">Image Link</label>
-            <input type="text" id="image" md-auto-focus>
+            <input type="text" id="image"ng-model="classified.image" md-auto-focus>
           </md-input-container>
           <md-button class="md-primary" class="md-primary">Save</md-button>
           <md-button class="md-primary" class="md-primary">Save Edit</md-button>
           <md-button class="md-warn" ng-click="closeSidebar()">Cancel</md-button>
+          <pre>
+            {{classified | json}}
+          </pre>
         </form>
       </md-content>
     </md-sidenav>
